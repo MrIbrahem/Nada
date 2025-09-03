@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>رسالة حب لندى</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f5e6ff 0%, #ffeef8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            direction: rtl;
+            /* overflow: hidden; */
+        }
+
+        .poster-container {
+            width: 800px;
+            min-height: 960px;
+            background: linear-gradient(135deg, #f8e7ff 0%, #ffe0f0 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            /* overflow: hidden; */
+            position: relative;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .background-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background-color: rgba(219, 112, 255, 0.3);
+            top: -100px;
+            right: -100px;
+            animation: float-shape 15s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 105, 180, 0.3);
+            bottom: -50px;
+            left: -50px;
+            animation: float-shape 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes float-shape {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -20px) scale(1.05);
+            }
+
+            50% {
+                transform: translate(-10px, 10px) scale(0.95);
+            }
+
+            75% {
+                transform: translate(15px, 15px) scale(1.02);
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: 700;
+            color: #9c27b0;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+            /* font-family: 'Dancing Script', cursive; */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: title-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes title-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .letter {
+            /* background-color: rgba(255, 255, 255, 0.85); */
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 8px 25px rgba(156, 39, 176, 0.15);
+            position: relative;
+            /* overflow: hidden; */
+            animation: letter-float 6s ease-in-out infinite;
+        }
+
+        @keyframes letter-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #9c27b0, #ff4081);
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .letter-content {
+            font-size: 28px;
+            line-height: 1.8;
+            color: #4a148c;
+            margin-bottom: 30px;
+            text-align: right;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fade-in 1s forwards;
+        }
+
+        .letter-content p:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .letter-content p:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .letter-content p:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .letter-content p:nth-child(4) {
+            animation-delay: 1.4s;
+        }
+
+        .letter-content p:nth-child(5) {
+            animation-delay: 1.8s;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-signature {
+            font-size: 32px;
+            font-weight: 500;
+            color: #9c27b0;
+            text-align: left;
+            margin-top: 30px;
+            /* font-style: italic; */
+            /* font-family: 'Dancing Script', cursive; */
+        }
+
+        .decoration {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .heart {
+            color: #e91e63;
+            font-size: 70px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .highlight {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background-color: rgba(233, 30, 99, 0.2);
+            z-index: -1;
+            border-radius: 6px;
+            animation: highlight-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes highlight-pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Birds Animation */
+        .birds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bird {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(156, 39, 176, 0.7);
+            animation: fly 15s linear infinite;
+        }
+
+        .bird:nth-child(1) {
+            top: 10%;
+            left: -50px;
+            animation-duration: 20s;
+            animation-delay: 0s;
+        }
+
+        .bird:nth-child(2) {
+            top: 20%;
+            left: -50px;
+            animation-duration: 25s;
+            animation-delay: 3s;
+        }
+
+        .bird:nth-child(3) {
+            top: 15%;
+            left: -50px;
+            animation-duration: 18s;
+            animation-delay: 7s;
+        }
+
+        .bird:nth-child(4) {
+            top: 25%;
+            left: -50px;
+            animation-duration: 22s;
+            animation-delay: 1s;
+        }
+
+        .bird:nth-child(5) {
+            top: 30%;
+            left: -50px;
+            animation-duration: 17s;
+            animation-delay: 5s;
+        }
+
+        .bird:nth-child(6) {
+            top: 5%;
+            left: -50px;
+            animation-duration: 19s;
+            animation-delay: 9s;
+        }
+
+        .bird:nth-child(7) {
+            top: 35%;
+            left: -50px;
+            animation-duration: 24s;
+            animation-delay: 2s;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateX(250px) translateY(-20px) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateX(500px) translateY(10px) rotate(5deg);
+            }
+
+            75% {
+                transform: translateX(750px) translateY(-15px) rotate(-3deg);
+            }
+
+            100% {
+                transform: translateX(1000px) translateY(5px) rotate(0deg);
+            }
+        }
+
+        /* Flowers */
+        .flowers {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            z-index: 0;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 24px;
+            color: #ff4081;
+            animation: sway 4s ease-in-out infinite;
+        }
+
+        .flower:nth-child(1) {
+            bottom: 20px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .flower:nth-child(2) {
+            bottom: 30px;
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        .flower:nth-child(3) {
+            bottom: 10px;
+            left: 50%;
+            animation-delay: 2s;
+        }
+
+        .flower:nth-child(4) {
+            bottom: 25px;
+            left: 70%;
+            animation-delay: 1.5s;
+        }
+
+        .flower:nth-child(5) {
+            bottom: 15px;
+            left: 90%;
+            animation-delay: 0.5s;
+        }
+
+        .flower:nth-child(6) {
+            bottom: 35px;
+            left: 20%;
+            animation-delay: 2.5s;
+        }
+
+        .flower:nth-child(7) {
+            bottom: 5px;
+            left: 40%;
+            animation-delay: 1.2s;
+        }
+
+        .flower:nth-child(8) {
+            bottom: 40px;
+            left: 60%;
+            animation-delay: 0.8s;
+        }
+
+        .flower:nth-child(9) {
+            bottom: 25px;
+            left: 80%;
+            animation-delay: 2.2s;
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(-5deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(5deg) scale(1.1);
+            }
+        }
+
+        /* Music Note */
+        .music-note {
+            position: absolute;
+            color: rgba(156, 39, 176, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .music-note:nth-child(1) {
+            top: 20%;
+            right: 10%;
+            font-size: 30px;
+            animation-delay: 0s;
+        }
+
+        .music-note:nth-child(2) {
+            top: 30%;
+            right: 20%;
+            font-size: 24px;
+            animation-delay: 1s;
+        }
+
+        .music-note:nth-child(3) {
+            top: 25%;
+            right: 30%;
+            font-size: 20px;
+            animation-delay: 2s;
+        }
+
+        .music-note:nth-child(4) {
+            top: 15%;
+            right: 40%;
+            font-size: 26px;
+            animation-delay: 0.5s;
+        }
+
+        .music-note:nth-child(5) {
+            top: 35%;
+            right: 15%;
+            font-size: 22px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* Audio Player */
+        .audio-player {
+            /* position: absolute; */
+            /* bottom: 20px; */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            /* z-index: 2; */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        #play-pause-btn {
+            color: #e91e63;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: icon-pulse 2s ease-in-out infinite;
+            font-size: 70px;
+            /* حجم الأيقونة */
+        }
+
+
+        @keyframes icon-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .audio-player i:hover {
+            transform: scale(1.2);
+        }
+
+        /* Hearts floating animation */
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: rgba(233, 30, 99, 0.3);
+            animation: float-up 8s linear infinite;
+        }
+
+        .floating-heart:nth-child(1) {
+            bottom: -50px;
+            left: 10%;
+            font-size: 20px;
+            animation-duration: 10s;
+            animation-delay: 0s;
+        }
+
+        .floating-heart:nth-child(2) {
+            bottom: -50px;
+            left: 30%;
+            font-size: 25px;
+            animation-duration: 8s;
+            animation-delay: 2s;
+        }
+
+        .floating-heart:nth-child(3) {
+            bottom: -50px;
+            left: 50%;
+            font-size: 18px;
+            animation-duration: 12s;
+            animation-delay: 4s;
+        }
+
+        .floating-heart:nth-child(4) {
+            bottom: -50px;
+            left: 70%;
+            font-size: 22px;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+
+        .floating-heart:nth-child(5) {
+            bottom: -50px;
+            left: 90%;
+            font-size: 20px;
+            animation-duration: 11s;
+            animation-delay: 3s;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.7;
+            }
+
+            90% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="poster-container">
+        <!-- Auto-play audio -->
+        <audio id="background-music" autoplay loop>
+            <source src="Sound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="background-shape shape-1"></div>
+        <div class="background-shape shape-2"></div>
+
+        <!-- Birds Animation -->
+        <div class="birds">
+            <div class="bird"><i class="fas fa-dove"></i></div>
+            <div class="bird"><i class="fas fa-dove"></i></div>
+            <div class="bird"><i class="fas fa-dove"></i></div>
+            <div class="bird"><i class="fas fa-dove"></i></div>
+            <div class="bird"><i class="fas fa-dove"></i></div>
+            <div class="bird"><i class="fas fa-dove"></i></div>
+            <div class="bird"><i class="fas fa-dove"></i></div>
+        </div>
+
+        <!-- Music Notes -->
+        <div class="music-note"><i class="fas fa-music"></i></div>
+        <div class="music-note"><i class="fas fa-music"></i></div>
+        <div class="music-note"><i class="fas fa-music"></i></div>
+        <div class="music-note"><i class="fas fa-music"></i></div>
+        <div class="music-note"><i class="fas fa-music"></i></div>
+
+        <!-- Floating Hearts -->
+        <div class="floating-hearts">
+            <div class="floating-heart"><i class="fas fa-heart"></i></div>
+            <div class="floating-heart"><i class="fas fa-heart"></i></div>
+            <div class="floating-heart"><i class="fas fa-heart"></i></div>
+            <div class="floating-heart"><i class="fas fa-heart"></i></div>
+            <div class="floating-heart"><i class="fas fa-heart"></i></div>
+        </div>
+
+        <!-- Flowers -->
+        <div class="flowers">
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+            <div class="flower"><i class="fas fa-spa"></i></div>
+        </div>
+
+        <div class="content">
+            <h1 class="title"><i id="play-pause-btn" class="fas fa-pause-circle"></i> حبيبتي ندى</h1>
+
+            <div class="letter">
+                <div class="letter-content">
+                    <!-- Audio Player -->
+                    <p>في كل يوم يمر، أزداد حباً لكِ. في عينيكِ أرى جمال الدنيا، وفي صوتكِ أسمع ألحان السعادة.</p>
+                    <p>ندى، أنتِ النور الذي أضاء حياتي، والفرحة التي ملأت كياني. معكِ، أصبحت أيامي أجمل، ولياليي أدفأ.
+                    </p>
+                    <p>أحبكِ أكثر من الكلمات تستطيع أن تعبر، وأكثر من الخيال يتخيل. أنتِ حلمي الذي تحقق، وأمنيتي التي
+                        دعوت الله لها.</p>
+                    <p>معكِ أشعر بالأمان والسكينة، وفي قربكِ أجد السعادة الحقيقية. أحبكِ يا ندى، وسأظل أحبكِ إلى الأبد.
+                    </p>
+                </div>
+
+                <div class="decoration">
+                    <i class="fas fa-heart heart"></i>
+                </div>
+
+                <div class="letter-signature">
+                    مع كل حبي،
+                    <br>
+                    إبراهيم
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('background-music');
+            const playButton = document.getElementById('play-pause-btn');
+            let isPlaying = true;
+
+            // Try to autoplay the audio
+            const playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay started successfully
+                    console.log("Audio autoplay started");
+                })
+                    .catch(error => {
+                        // Autoplay was prevented
+                        console.log("Audio autoplay was prevented");
+                        isPlaying = false;
+                        playButton.classList.remove('fa-pause-circle');
+                        playButton.classList.add('fa-play-circle');
+                    });
+            }
+
+            playButton.addEventListener('click', function () {
+                if (isPlaying) {
+                    audio.pause();
+                    this.classList.remove('fa-pause-circle');
+                    this.classList.add('fa-play-circle');
+                    isPlaying = false;
+                } else {
+                    audio.play();
+                    this.classList.remove('fa-play-circle');
+                    this.classList.add('fa-pause-circle');
+                    isPlaying = true;
+                }
+            });
+
+            // Create more birds dynamically
+            const birdsContainer = document.querySelector('.birds');
+            for (let i = 0; i < 5; i++) {
+                const bird = document.createElement('div');
+                bird.className = 'bird';
+                bird.innerHTML = '<i class="fas fa-dove"></i>';
+                bird.style.top = Math.random() * 40 + '%';
+                bird.style.animationDuration = (15 + Math.random() * 10) + 's';
+                bird.style.animationDelay = Math.random() * 5 + 's';
+                birdsContainer.appendChild(bird);
+            }
+
+            // Create more flowers dynamically
+            const flowersContainer = document.querySelector('.flowers');
+            for (let i = 0; i < 5; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.innerHTML = '<i class="fas fa-spa"></i>';
+                flower.style.left = Math.random() * 90 + 5 + '%';
+                flower.style.bottom = Math.random() * 30 + 10 + 'px';
+                flower.style.animationDelay = Math.random() * 3 + 's';
+                flowersContainer.appendChild(flower);
+            }
+
+            // Create more music notes dynamically
+            for (let i = 0; i < 5; i++) {
+                const note = document.createElement('div');
+                note.className = 'music-note';
+                note.innerHTML = '<i class="fas fa-music"></i>';
+                note.style.top = Math.random() * 40 + 10 + '%';
+                note.style.right = Math.random() * 80 + 10 + '%';
+                note.style.animationDelay = Math.random() * 3 + 's';
+                note.style.fontSize = (15 + Math.random() * 15) + 'px';
+                document.querySelector('.poster-container').appendChild(note);
+            }
+
+            // Create more floating hearts dynamically
+            const heartsContainer = document.querySelector('.floating-hearts');
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                heart.style.left = Math.random() * 90 + 5 + '%';
+                heart.style.animationDuration = (8 + Math.random() * 4) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (15 + Math.random() * 15) + 'px';
+                heartsContainer.appendChild(heart);
+            }
+        });
+    </script>
+</body>
+
+</html>
